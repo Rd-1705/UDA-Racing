@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Context Search
-import { useSearch } from "../conteks/SearchContext";
+import { useSearch } from "../component/SearchContext";
 
 // Context Comment
 import { useComments } from "../conteks/CommentContext";

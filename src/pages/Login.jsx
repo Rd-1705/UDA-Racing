@@ -10,7 +10,7 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    
+
     const users = JSON.parse(localStorage.getItem("user")) || [];
 
     // Cek email & password
@@ -19,10 +19,8 @@ export default function Login() {
     );
 
     if (validUser) {
-      // alert(`Login berhasil, selamat datang ${validUser.username}!`);
-      // Simpan session user (opsional)
-      localStorage.setItem("currentUser", JSON.stringify(validUser));
-      navigate("/"); // arahkan ke halaman utama/dashboard
+      localStorage.setItem("pengguna", JSON.stringify(validUser)); // ✅
+      navigate("/");
     } else {
       alert("Email atau password salah!");
     }

@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSearch } from "../conteks/SearchContext";
+import { useSearch } from "../component/SearchContext";
 
 // pakai context komentar
 import { useComments } from "../conteks/CommentContext";

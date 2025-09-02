@@ -1,7 +1,8 @@
-import { useSearch } from "../conteks/SearchContext";
+import { useSearch } from "./SearchContext";
 import { useState } from "react";
 import { Heart, ShoppingCart } from "lucide-react";
 import { MessageCircleMore } from "lucide-react";
+import { User } from "lucide-react";
 
 export default function Header() {
   const { setResults, setSearchText } = useSearch();
@@ -73,18 +74,25 @@ export default function Header() {
 
           {/* Icons */}
           <div className="flex items-center gap-4">
-            {/* <a href="/#"> */}
+            {/* lovers */}
               <div className="relative flex items-center gap-1">
                 <span className="absolute -top-2 -right-2 bg-white text-black text-xs px-1 rounded-full">
                   0
                 </span>
                 <Heart className="w-6 h-6" />
               </div>
-            {/* </a> */}
 
+              {/* comment */}
             <a href="/comments">
               <div className="relative flex items-center gap-2 bg-yellow-500 text-black px-3 py-2 rounded">
                 <MessageCircleMore className="w-6 h-6" />
+              </div>
+            </a>
+
+            {/* Profile */}
+            <a href="/profil">
+              <div className="relative flex items-center gap-2 bg-white text-black px-3 py-2 rounded hover:bg-gray-200">
+                <User className="w-6 h-6" />
               </div>
             </a>
           </div>
