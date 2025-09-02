@@ -21,7 +21,7 @@ export default function Register () {
       return;
     };
     if(userpass !== userpassword){
-      alert("beda kontol, samainn pp")
+      alert("Pasword tidak sama")
       return;
     };
     const a = {
@@ -45,7 +45,7 @@ export default function Register () {
         <img
           src="/logo.jpg"
           alt="UDA Rider Logo"
-          className="w-40 mb-8 drop-shadow-[0_0_10px_rgba(255,100,0,0.8)]"
+          className="w-40 mb-5 drop-shadow-[0_0_10px_rgba(255,100,0,0.8)]"
         />
 
         <h2 className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-600 to-yellow-400">
@@ -53,7 +53,7 @@ export default function Register () {
         </h2>
 
         {/* Form */}
-        <form className="space-y-5" onSubmit={handleRegister}>
+        <form className="space-y-1" onSubmit={handleRegister}>
           {/* Nama */}
           <div>
             <label className="block text-gray-300 font-medium">

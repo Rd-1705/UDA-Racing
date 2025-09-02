@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-200 py-10 mt-10">
+    <footer className="bg-gray-900 text-gray-200 py-10 mt-0.5">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
         {/* TAUTAN */}
         <div>
