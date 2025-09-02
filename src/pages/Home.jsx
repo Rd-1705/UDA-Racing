@@ -25,7 +25,7 @@ export default function Home() {
 
   const displayProducts = results.length > 0 ? results : products;
 
-  // 🔥 fungsi untuk nambah komentar ke produk tertentu
+  // fungsi untuk nambah komentar ke produk tertentu
   const handleAddComment = (productId) => {
     const text = prompt("Tulis komentar untuk produk ini:");
     if (text && text.trim() !== "") {
@@ -81,27 +81,7 @@ export default function Home() {
             </button>
           </div>
         ))}
-      </div>
-
-      {/* Daftar Komentar */}
-      <div className="mt-12 bg-white p-6 rounded-2xl shadow">
-        <h2 className="text-xl font-bold mb-4">Komentar Terbaru</h2>
-        {comments.length === 0 ? (
-          <p className="text-gray-500">Belum ada komentar</p>
-        ) : (
-          <ul className="space-y-2">
-            {comments.map((c) => (
-              <li
-                key={c.id}
-                className="border-b border-gray-200 pb-2 text-gray-700"
-              >
-                <span className="block">{c.text}</span>
-                <span className="text-xs text-gray-400">{c.date}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      </div>      
     </div>
   );
 }

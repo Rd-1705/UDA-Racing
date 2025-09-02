@@ -82,9 +82,11 @@ export default function Header() {
               </div>
             {/* </a> */}
 
-            <div className="relative flex items-center gap-2 bg-yellow-500 text-black px-3 py-2 rounded">
-              <MessageCircleMore className="w-6 h-6" />
-            </div>
+            <a href="/comments">
+              <div className="relative flex items-center gap-2 bg-yellow-500 text-black px-3 py-2 rounded">
+                <MessageCircleMore className="w-6 h-6" />
+              </div>
+            </a>
           </div>
         </div>
       </header>

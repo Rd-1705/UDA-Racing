@@ -1,3 +1,4 @@
+// src/conteks/CommentContext.jsx
 import { createContext, useContext, useEffect, useState } from "react";
 
 const CommentContext = createContext();
@@ -5,7 +6,7 @@ const CommentContext = createContext();
 export function CommentProvider({ children }) {
   const [comments, setComments] = useState([]);
 
-  // 🔹 Load dari localStorage saat pertama kali
+  // 🔹 Load dari localStorage
   useEffect(() => {
     const saved = localStorage.getItem("comments");
     if (saved) {
@@ -13,12 +14,12 @@ export function CommentProvider({ children }) {
     }
   }, []);
 
-  // 🔹 Simpan ke localStorage setiap kali ada perubahan
+  // 🔹 Simpan ke localStorage
   useEffect(() => {
     localStorage.setItem("comments", JSON.stringify(comments));
   }, [comments]);
 
-  // 🔹 Tambah komentar
+  // Create
   const addComment = (text) => {
     const newComment = {
       id: Date.now(),
@@ -28,8 +29,22 @@ export function CommentProvider({ children }) {
     setComments((prev) => [newComment, ...prev]);
   };
 
+  // Update
+  const updateComment = (id, newText) => {
+    setComments((prev) =>
+      prev.map((c) => (c.id === id ? { ...c, text: newText } : c))
+    );
+  };
+
+  // Delete
+  const deleteComment = (id) => {
+    setComments((prev) => prev.filter((c) => c.id !== id));
+  };
+
   return (
-    <CommentContext.Provider value={{ comments, addComment }}>
+    <CommentContext.Provider
+      value={{ comments, addComment, updateComment, deleteComment }}
+    >
       {children}
     </CommentContext.Provider>
   );
