@@ -48,12 +48,12 @@ import './index.css'
 
 // Pages
 import App from './App.jsx'
-import Home from './pages/home.jsx'
 import Login from './pages/Login.jsx'
-import About from './pages/about.jsx'
-import Product from './pages/product.jsx'
+import About from './pages/About.jsx'
+import Product from './pages/Product.jsx'
 import Detail from './pages/Detail.jsx'
 import Register from './pages/Register.jsx'
+import Home from './pages/Home.jsx'
 // import Favourit from './pages/Favourit.jsx'
 // import ProtectedRouter from './component/ProtectedRouter.jsx'
 
