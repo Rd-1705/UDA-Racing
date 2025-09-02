@@ -20,11 +20,12 @@ export function CommentProvider({ children }) {
   }, [comments]);
 
   // Create
-  const addComment = (text) => {
+  const addComment = (text, productId) => {
     const newComment = {
       id: Date.now(),
       text,
       date: new Date().toLocaleString("id-ID"),
+      productId, // simpan id produk
     };
     setComments((prev) => [newComment, ...prev]);
   };
