@@ -1,12 +1,41 @@
-# React + Vite
+# 🏍️ UDA-RACING
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+UDA-RACING adalah website showroom motor sederhana berbasis **React + Vite**.  
+Website ini menyediakan katalog produk motor (Matic, Sport, Cub), detail produk, sistem komentar, pencarian, dan fitur autentikasi dasar.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Fitur Utama
 
-## Expanding the ESLint configuration
+- **Autentikasi User**
+  - Login & Register menggunakan halaman khusus.
+  - Proteksi halaman dengan `ProtectedRouter`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Produk**
+  - Menampilkan daftar motor berdasarkan kategori.
+  - Detail produk dengan informasi lebih lengkap.
+  - Pencarian produk berdasarkan nama.
+  - Pagination untuk navigasi produk.
+
+- **Komentar**
+  - User dapat menambahkan komentar di setiap produk.
+  - Komentar tersimpan menggunakan **React Context** (`CommentContext`).
+  - Komentar tidak hilang meskipun berpindah halaman (tersimpan di LocalStorage).
+
+- **Komponen Reusable**
+  - `Header` dan `Footer` untuk navigasi.
+  - Context API (`SearchContext`, `CommentContext`, `Authentication`) untuk state global.
+
+---
+
+## 📂 Struktur Folder
+
+```bash
+src/
+├── assets/              # Asset statis (logo, gambar, dll.)
+├── component/           # Komponen UI (Header, Footer, Router)
+├── conteks/             # Context API (Auth, Search, Comment)
+├── pages/               # Halaman utama (Home, Product, Detail, Login, Register, About)
+├── App.jsx              # Root komponen utama
+├── main.jsx             # Entry point aplikasi
+└── index.css            # Styling global
