@@ -1,14 +1,14 @@
 // src/pages/Comment.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useComments } from "../conteks/CommentContext";
 
 export default function Comment() {
   const { comments, updateComment, deleteComment } = useComments();
+  const [products, setProducts] = useState([]);
   const [editingId, setEditingId] = useState(null);
   const [editText, setEditText] = useState("");
-  const [products, setProducts] = useState([]);
 
-   // Fetch produk dari API sekali saja
+  // Fetch produk dari API sekali saja
   useEffect(() => {
     fetch("https://rd-motor-akbar.vercel.app/api/datas")
       .then((res) => res.json())
@@ -27,12 +27,14 @@ export default function Comment() {
     setEditText("");
   };
 
-    const getProduct = (id) => products.find((p) => p.id === id);
+  const getProduct = (id) => products.find((p) => p.id === id);
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="bg-white p-6 rounded-2xl shadow">
-        <h1 className="text-2xl font-bold mb-4 text-gray-800">💬 Semua Komentar</h1>
+        <h1 className="text-2xl font-bold mb-4 text-gray-800">
+          💬 Semua Komentar
+        </h1>
 
         {comments.length === 0 ? (
           <p className="text-gray-500">Belum ada komentar</p>
