@@ -53,7 +53,7 @@ export default function Register () {
         </h2>
 
         {/* Form */}
-        <form className="space-y-1" onSubmit={handleRegister}>
+        <form className="space-y-3" onSubmit={handleRegister}>
           {/* Nama */}
           <div>
             <label className="block text-gray-300 font-medium">
